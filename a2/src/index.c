@@ -1,13 +1,4 @@
 #include "index.h"
-#include <math.h>
-#include "common.h"
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-#include <assert.h>
-#include "set.h"
-#include <stdint.h>
-#include <ctype.h>
 
 #define ERROR_MSG "%s : %s(), at line: %d", __FILE__, __func__, __LINE__
 
@@ -61,7 +52,9 @@ int compare_data(void *a, void *b)
     return compare_strings(((data_t *)a)->path, ((data_t *)b)->path);
 }
 
-
+/*
+ * Creates a new, empty index.
+ */
 index_t *index_create()
 {
     index_t *index = calloc(1, sizeof(index_t));
@@ -73,6 +66,10 @@ index_t *index_create()
     return index;
 }
 
+/*
+ * Destroys the given index.  Subsequently accessing the index will
+ * lead to undefined behavior.
+ */
 void index_destroy(index_t *index)
 {
     //TODO: Potential bug here (may need specialized free functions)
@@ -93,9 +90,12 @@ void index_destroy(index_t *index)
 void index_addpath(index_t *index, char *path, list_t *words)
 {
     list_iter_t *list_iter = list_createiter(words);
+
+    //
     while (list_hasnext(list_iter))
     {
         char *current_word = list_next(list_iter);
+
         if (map_haskey(index->map, current_word) == 1)
         {
             set_t *set = map_get(index->map, current_word);
@@ -120,7 +120,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
             {
                 // set didn't contain data_t
                 data_t *data = data_create();
-                *data = (data_t){.path = path, .term_in_document = 1, .terms_in_document = list_size(words)};
+                *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = list_size(words)};
                 set_add(set, data);
             }
         }
@@ -129,16 +129,15 @@ void index_addpath(index_t *index, char *path, list_t *words)
             data_t *data = data_create();
             set_t *set = set_create(compare_data);
 
-            data->path = path;
-            data->term_in_document = 1;
-            data->terms_in_document = list_size(words);
-
+            *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = list_size(words)};
             set_add(set, data);
             map_put(index->map, current_word, set);
         }
     }
 
     list_destroyiter(list_iter);
+    free(path);
+    // Moon moon does not like to double free on words
     index->doc_count++;
 }
 
@@ -186,7 +185,6 @@ list_t *index_query(index_t *index, list_t *query, char **errmsg)
             query_result->score = data->tf * data->idf;
             list_addfirst(retval, query_result);
         }
-
         set_destroyiter(set_iter);
     }
     list_destroyiter(index->query_iterator);
@@ -290,7 +288,10 @@ set_t *parse_term(index_t *index, char **errmsg)
         retval = parse_query(index, errmsg);
 
         if (compare_strings(index->current, ")") != 0)
-            *errmsg = "moon moon was here";
+            sprintf(*errmsg, "Internal error: "
+                             "expected ')' found '%s'"
+                             "from function '%s' in file '%s' line number '%d'",
+                    index->current, __func__, __FILE__, __LINE__);
         else if (list_hasnext(index->query_iterator))
             index->current = list_next(index->query_iterator);
     }
@@ -304,7 +305,10 @@ set_t *parse_term(index_t *index, char **errmsg)
         }
         else
         {
-            *errmsg = "moon moon was here";
+            sprintf(*errmsg, "Internal error: "
+                             "key not found in map: '%s'  "
+                             "from function '%s' in file '%s' line number '%d'",
+                    index->current, __func__, __FILE__, __LINE__);
         }
     }
     return retval;

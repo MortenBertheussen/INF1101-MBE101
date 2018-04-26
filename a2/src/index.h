@@ -5,13 +5,11 @@
 #include "list.h"
 #include "map.h"
 #include "set.h"
-
-#if __APPLE__ || __WINDOWS__
-	#include <limits.h>
-#else
-	#include <linux/limits.h>
-#endif
-
+#include "common.h"
+#include <math.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <string.h>
 
 struct index;
 typedef struct index index_t;
