@@ -29,6 +29,12 @@ typedef struct data
     double idf;
 } data_t;
 
+set_t *parse_query(index_t *index, char **errmsg);
+set_t *parse_andterm(index_t *index, char **errmsg);
+set_t *parse_orterm(index_t *index, char **errmsg);
+set_t *parse_term(index_t *index, char **errmsg);
+set_t *parse_andnot(index_t *index, char **errmsg);
+
 data_t *data_create()
 {
     data_t *d = calloc(1, sizeof(data_t));
@@ -101,16 +107,17 @@ void index_addpath(index_t *index, char *path, list_t *words)
             if (set_contains(set, &(data_t){.path = path}) == 1)
             {
                 // iterate over set to find data so we can manipulate it
-                set_iter_t *iter = set_createiter(set);
-                while (set_hasnext(iter))
+                set_iter_t *set_iter = set_createiter(set);
+                while (set_hasnext(set_iter))
                 {
-                    data_t *data = set_next(iter);
+                    data_t *data = set_next(set_iter);
                     if (compare_strings(data->path, path) == 0)
                     {
                         data->term_in_document++;
                         break;
                     }
                 }
+                set_destroyiter(set_iter);
             }
             else
             {
@@ -140,21 +147,15 @@ void index_addpath(index_t *index, char *path, list_t *words)
     index->doc_count++;
 }
 
-set_t *parse_query(index_t *index, char **errmsg);
-set_t *parse_andterm(index_t *index, char **errmsg);
-set_t *parse_orterm(index_t *index, char **errmsg);
-set_t *parse_term(index_t *index, char **errmsg);
-set_t *parse_andnot(index_t *index, char **errmsg);
-
 int compare_query(void *a, void *b)
 {
-    double d1 = ((query_result_t*)a)->score;
-    double d2 = ((query_result_t*)b)->score;    
-    if (d1> d2)
+    double d1 = ((query_result_t *)a)->score;
+    double d2 = ((query_result_t *)b)->score;
+    if (d1 > d2)
         return -1;
-    if (d1< d2)
+    if (d1 < d2)
         return 1;
-    return 0;	
+    return 0;
 }
 
 /*
@@ -193,6 +194,7 @@ list_t *index_query(index_t *index, list_t *query, char **errmsg)
 
         set_destroyiter(set_iter);
     }
+    list_destroyiter(index->query_iterator);
     list_sort(retval);
     return retval;
 }
