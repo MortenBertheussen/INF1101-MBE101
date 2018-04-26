@@ -9,9 +9,8 @@
 #include <stdint.h>
 #include <ctype.h>
 
-#define MAX_SIZE 100 // Maximum string size
 #define ERROR_MSG "%s : %s(), at line: %d", __FILE__, __func__, __LINE__
-// https://stevenloria.com/tf-idf/
+
 struct index
 {
     map_t *map;
@@ -57,6 +56,12 @@ void data_destroy(data_t *d)
     }
 }
 
+int compare_data(void *a, void *b)
+{
+    return compare_strings(((data_t *)a)->path, ((data_t *)b)->path);
+}
+
+
 index_t *index_create()
 {
     index_t *index = calloc(1, sizeof(index_t));
@@ -65,9 +70,6 @@ index_t *index_create()
         fatal_error(ERROR_MSG);
     }
     index->map = map_create(compare_strings, hash_string);
-    index->current = NULL; //TODO: Maybe free?
-    index->query_iterator = NULL;
-    index->doc_count = 0;
     return index;
 }
 
@@ -80,11 +82,6 @@ void index_destroy(index_t *index)
         list_destroyiter(index->query_iterator);
     }
     free(index);
-}
-
-int compare_data(void *a, void *b)
-{
-    return compare_strings(((data_t *)a)->path, ((data_t *)b)->path);
 }
 
 /*
@@ -123,9 +120,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
             {
                 // set didn't contain data_t
                 data_t *data = data_create();
-                data->path = path;
-                data->term_in_document = 1;
-                data->terms_in_document = list_size(words);
+                *data = (data_t){.path = path, .term_in_document = 1, .terms_in_document = list_size(words)};
                 set_add(set, data);
             }
         }
@@ -279,13 +274,10 @@ set_t *parse_orterm(index_t *index, char **errmsg)
     }
     return retval;
 }
+
 /*
-    query ::= andterm | andterm "ANDNOT" query
-    andterm ::= orterm | orterm "AND" andterm
-    orterm ::= term | term "OR" orterm
     term ::= "("query")"| <word>
 */
-
 set_t *parse_term(index_t *index, char **errmsg)
 {
     set_t *retval = NULL;
