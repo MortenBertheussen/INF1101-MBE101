@@ -89,19 +89,22 @@ void index_destroy(index_t *index)
  */
 void index_addpath(index_t *index, char *path, list_t *words)
 {
-    list_iter_t *list_iter = list_createiter(words);
+    // Save the size of the 'words' list before popping content of it.
+    int document_word_count = list_size(words);
 
-    //
-    while (list_hasnext(list_iter))
+    while (0 < list_size(words))
     {
-        char *current_word = list_next(list_iter);
+        // Popping content of the word list such that the function comply with given instructions.
+        char *current_word = list_popfirst(words);
 
-        if (map_haskey(index->map, current_word) == 1)
+        // 'Current_word' found in map.
+        if (1 == map_haskey(index->map, current_word))
         {
+            // Find the set containing 'current_word'.
             set_t *set = map_get(index->map, current_word);
 
-            // if set contains data_t
-            if (set_contains(set, &(data_t){.path = path}) == 1)
+            // Set contains 'path',
+            if (1 == set_contains(set, &(data_t){.path = path}))
             {
                 // iterate over set to find data so we can manipulate it
                 set_iter_t *set_iter = set_createiter(set);
@@ -120,7 +123,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
             {
                 // set didn't contain data_t
                 data_t *data = data_create();
-                *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = list_size(words)};
+                *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = document_word_count};
                 set_add(set, data);
             }
         }
@@ -129,13 +132,11 @@ void index_addpath(index_t *index, char *path, list_t *words)
             data_t *data = data_create();
             set_t *set = set_create(compare_data);
 
-            *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = list_size(words)};
+            *data = (data_t){.path = strdup(path), .term_in_document = 1, .terms_in_document = document_word_count};
             set_add(set, data);
             map_put(index->map, current_word, set);
         }
     }
-
-    list_destroyiter(list_iter);
     free(path);
     // Moon moon does not like to double free on words
     index->doc_count++;
