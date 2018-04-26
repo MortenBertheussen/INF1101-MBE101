@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "limits.h": "c",
+        "climits": "c",
+        "index.h": "c",
+        "array": "c",
+        "string_view": "c",
+        "string.h": "c"
+    }
+}

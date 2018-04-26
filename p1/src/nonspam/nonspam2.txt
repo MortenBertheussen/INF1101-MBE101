@@ -1,0 +1,397 @@
+****************************************************************************
+*
+****************************************************************************
+*
+
+                   HPCA-13: CALL FOR PARTICIPATION
+                        
+   13th International Symposium on High-Performance Computer Architecture
+       Hyatt Regency Phoenix, Phoenix, Arizona, February 10-14, 2007
+
+                        http://www.hpcaconf.org/hpca13
+
+****************************************************************************
+*
+****************************************************************************
+*
+
+- Early HPCA Conference Registration Deadline: January 26, 2007
+
+- HPCA Registration is at 
+  http://www.regonline.com/Checkin.asp?EventId=114540 
+  http://www.ece.arizona.edu/~hpca/registrationfees.html
+
+- Transportation and Parking Information is updated at 
+  http://www.ece.arizona.edu/~hpca/hotel.html
+
+- Alternative Hotel Accomodation is available at
+  http://www.ece.arizona.edu/~hpca/hotel.html
+
+- Student travel grant application is available at 
+  http://www.ece.arizona.edu/~hpca/
+  Application Deadline: January 30, 2007.
+
+****************************************************************************
+*
+****************************************************************************
+*
+
+The International Symposium on High-Performance Computer Architecture
+provides a high quality forum for scientists and engineers to present
+their lastest research findings in this rapidly chaing field. HPCA-13,
+the thirteenth in the series of International Symposium on 
+High-Performance Computer Architecture, will be held in Phoenix, Arizona
+from February 10-14, 2007. The conference program is available
+online at http://www.ece.arizona.edu/~hpca/program.html
+
+-----------------------------------------------------------
+             Saturday, February 10, 2007
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+Workshops:
+
+(All Day Sessions)
+* RIDMS-2: Second Workshop on Real-Time and Interactive 
+	   Digital Media Supercomputing 
+
+-----------------------------------------------------------
+-----------------------------------------------------------
+             Sunday, February 11, 2007
+-----------------------------------------------------------
+-----------------------------------------------------------
+Workshops:
+
+(All Day Sessions)
+* INTERACT-11: Eleventh Workshop on Interaction between 
+	       Compilers and Computer Architectures 
+	       
+* CAECW-10:    Tenth Workshop on Computer Architecture
+               Evaluation using Commercial Workloads
+
+(Morning Sessions)               
+* RIDMS-2:     Second Workshop on Real-Time and Interactive 
+	       Digital Media Supercomputing 
+	       
+* CMP-MSI:     First Workshop on Chip Multiprocessor Memory 
+               Systems and Interconnects 
+
+(Afternoon Sessions)   
+* CARD:	       First Workshop on Computer Architecture Research 
+               Directions
+               
+Tutorials:
+
+(Morning Session)
+* Practical Cache Performance Modeling for Computer Architects
+  
+  Yan Solihin, NCSU
+  Thomas Puzak, IBM Research
+  Phil Emma, IBM Research
+
+(Afternoon Session)  
+* Microprocessor Memory Array Circuits for Architects
+
+-----------------------------------------------------------
+06:00pm - 08:00pm Conference Reception
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+                 TECHNICAL PROGRAM
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+             Monday, February 12, 2007
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+07:30am - 08:30am Breakfast
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+08:30am - 08:50am Welcome Message
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+08:50am - 10:00am Keynote I
+* Interconnect-Centric Computing
+  - Bill Dally (Willard R. and Inez Kerr Bell Professor of 
+  Engineering and Chairman, Department of Computer Science, 
+  Stanford University)
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:00am - 10:30am Break
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:30am - 12:00pm Session 1 Multiprocessors Architectures
+
+* An Adaptive Shared/Private NUCA Cache Partitioning Scheme 
+  for Chip Multiprocessors
+  - H. Dybdahl (Norwegian University of Science and Technology) 
+  and P. Stenström (Chalmers)
+  
+* Evaluating MapReduce for Multicore and Multiprocessor 
+  Systems
+  - A. Penmetsa, C. Ranger, R. Raghuraman, and C. Kozyrakis 
+  (Stanford University)
+  
+* Extending Multicore Architectures to Exploit Hybrid 
+  Parallelism in Single-Thread Applications
+  - H. Zhong, S. Lieberman, and S. Mahlke, 
+  (University of Michigan)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+12:00pm - 01:30pm Lunch
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+01:30pm - 03:00pm Session 2 Industry Session
+
+* Implications of Device Timing Variability on Full Chip 
+  Timing
+  - M. Annavaram and E. Grochowski (Intel)
+  
+* Optical Interconnect Opportunities for Future Server 
+  Memory Systems
+  - Y. Katayama and A. Okazaki (IBM)
+ 
+* Exploiting eDRAM Bandwidth With Data Prefetching: Simulation
+  and Measurements
+  - V. Salapura, J. Brunheroto, F. Redigolo (IBM T.J. Watson 
+  Research Center)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+03:00pm - 03:30pm Break
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+03:30pm - 05:00pm Session 3 Prefetching
+
+* Feedback Directed Prefetching: Improving the Performance 
+  and Bandwidth-Efficiency of Hardware Prefetchers
+  - S. Srinath, O. Mutlu, H. Kim, and Y. Patt 
+  (University of Texas at Austin)
+  
+* Improving Branch Prediction and Predicated Execution in 
+  Out-of-Order Processors
+  - E. Quiones, J. Parcerisa, and A. Gonzlez 
+  (Universitat Politcnica de Catalunya)
+  
+* Accelerating and Adapting Precomputation Threads for 
+  Efficient Prefetching
+  - W. Zhang, B. Calder, and D. Tullsen 
+  (University of California, San Diego)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+06:00pm - 07:30pm TCCA Business Meeting
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+               Tuesday, February 13, 2006
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+07:30am - 08:30am Breakfast
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+08:30am - 09:30am Keynote II
+* Petascale Computing Research Challenges - A Manycore 
+  Perspective
+  - Steve Pawlowski (Senior Fellow and Chief Technology 
+  Officer of the Digital Enterprise Group, Intel Corporation)
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+09:30am - 10:00am Break
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:00am - 12:00pm Session 4 Parallel Session 
+Memory Systems - I
+
+* A Scalable, LiveLock-Free Approach to Transactional Memory
+  - H. Chafi, J. Casper, B. Carlstrom, A. McDonald, C. Kozyrakis, 
+  and K. Olukotun (Stanford University)
+  
+* Fully-Buffered DIMM Memory Architectures: Understanding 
+  Mechanisms, Overheads and Scaling
+  - B. Ganesh and B. Jacob, (University of Maryland College Park), 
+  D. Wang (Metaram), and A. Jaleel (Intel)
+  
+* HARD: Hardware-Assisted Lockset-Based Race Detection
+  - P. Zhou, R. Teodorescu, and Y. Zhou (UIUC)
+  
+* Colorama: Architectural Support for Data-Centric 
+  Synchronization
+  - L. Ceze, Pablo Montesinos (University of Illinois at 
+  Urbana-Champaign), C. von Praun (IBM T J Watson) and 
+  J. Torrellas (University of Illinois at Urbana-Champaign)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:00am - 12:00pm Session 5 Parallel Session 
+Error Detection and Fault-Tolerance
+
+* Error Detection via Online Checking of Cache Coherence 
+  with Token Coherence Signatures
+  - A. Meixner and D. Sorin (Duke University)
+  
+* A Low Overhead Fault Tolerant Coherence Protocol for CMP 
+  Architectures
+  - R. Fernndez-Pascual, J. Garca, M. Acacio, and J. Duato, 
+  (Universidad de Murcia and Universidad Politcnica de Valencia)
+  
+* Perturbation-Based Fault Screening
+  - P. Racunas (Intel) and K. Constantinides (University of 
+  Michigan), S. Manne, and S. Mukherjee (Intel)
+  
+* Application-Level Correctness and its Impact on Fault 
+  Tolerance
+  - X. Li, and D. Yeung (Univ. of Maryland at College Park)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+12:00pm - 01:30pm Lunch
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+01:30pm - 03:00pm Session 6 Parallel Session 
+Thermal Modeling and SIMD
+
+* Thermal Herding: Microarchitecture Techniques for 
+  Controlling HotSpots in High-Performance 3D-Integrated 
+  Processors
+  - K. Puttaswamy and G. Loh (Georgia Institute of Technology)
+  
+* Modeling and Managing Thermal Profiles of Rack-Mounted 
+  Servers with ThermoStat
+  - J. Choi, Y. Kim, A. Sivasubramaniam, J. Srebric, Q. Wang 
+  (Penn. State University), and J. Lee (KAIST)
+  
+* Liquid SIMD: Abstracting SIMD Hardware using Lightweight 
+  Dynamic Mapping
+  - N. Clark, A. Hormati, S. Mahlke (University of Michigan), 
+  S. Yehia, and K. Flautner (ARM Ltd.)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+01:30pm - 03:00pm Session 7 Parallel Session
+Chip Multiprocessors, Simultaneous Multi-threading, and Caches
+
+* Interactions Between Compression and Prefetching in Chip 
+  Multiprocessors
+  - A. Alameldeen (Intel) and D. Wood (University of 
+  Wisconsin-Madison)
+  
+* A Memory-Level Parallelism Aware Fetch Policy for SMT 
+  Processors
+  - S. Eyerman and L. Eeckhout (Ghent University)
+  
+* Line Distillation: Increasing Cache Capacity by Filtering 
+  Unused Words in Cache Lines
+  - M. Qureshi, M. Suleman, and Y. Patt (University of Texas 
+  at Austin)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+03:00pm - 03:30pm Break
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+03:30pm - 05:00pm Panel 
+* Researching Novel Systems: To Instantiate, Emulate, 
+  Simulate, or Analyticate?
+
+  Moderator: 
+   Doug Burger (University of Texas at Austin)
+  Panel Members: 
+   Joel Emer (Intel) 
+   Phil Emma (IBM) 
+   Steve Keckler (University of Texas at Austin) 
+   Yale Patt (University of Texas at Austin) 
+   Dave Patterson (University of California, Berkeley) 
+
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+06:00pm - 10:30pm Conference Banquet
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+               Wednesday, February 14, 2007
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+07:00am - 08:00am Breakfast
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+08:00am - 10:00am Session 8 Memory Systems - II
+
+* Decoupling Hardware Transactional Memory from Caches
+  - L. Yen, J. Bobba, M. Marty, K. Moore, H. Volos, M. Hill, 
+  M. Swift, and D. Wood (Univ. of Wisconsin-Madison)
+  
+* MemTracker: Efficient and Programmable Support for Memory 
+  Access Monitoring and Debugging
+  - G. Venkataramani, B. Roemer (Georgia Tech), Y. Solihin 
+  (NCSU) and M. Prvulovic (Georgia Tech)
+  
+* A Burst Scheduling Access Reordering Mechanism
+  - J. Shao and B. Davis, (Michigan Technological University)
+  
+* Identifying Post-Dominance Information for Speculatively 
+  Multithreaded Processors
+  - M. Agarwal, K. Malik, K. Woley, S. Stone (University of 
+  Illinois at Urbana Champaign), T. Rafacz (AMD), M. Frank 
+  (University of Illinois at Urbana Champaign)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:00am - 10:30am Break
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+10:30am - 12:30pm Session 9 Virtual Machines, Caches and 
+Modeling
+
+* Concurrent Direct Network Access for Virtual Machine 
+  Monitors
+  - P. Willmann, J. Shafer, D. Carr (Rice University), 
+  A. Menon (EPFL), S. Rixner, A. Cox (Rice University), 
+  and W. Zwaenepoel (EPFL)
+  
+* A Domain-Specific On-Chip Network Design for Large Scale 
+  Cache Systems
+  - Y. Jin and E. Kim (Texas A&M University), K. Yum 
+  (University of Texas, San Antonio)
+  
+* An Adaptive Cache Coherence Protocol Optimized for 
+  Producer-Consumer Sharing
+  - L. Cheng, J. Carter (Univ. of Utah), and D. Dai (SGI)
+  
+* Illustrative Design Space Studies with Microarchitectural 
+  Regression Models
+  - B. Lee and D. Brooks (Harvard University)
+  
+-----------------------------------------------------------
+
+-----------------------------------------------------------
+	        END OF PROGRAM
+-----------------------------------------------------------
+

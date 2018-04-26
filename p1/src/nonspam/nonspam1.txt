@@ -1,0 +1,184 @@
+(This CfP is sent by Hermann de Meer, University of Passau,
+ Germany. Apologies for multiple copies.)
+
+*****************************************************************
+
+                          Call for Papers
+                            SASO 2007
+                   International Conference on
+            Self-Adaptive and Self-Organizing Systems
+
+                Boston, Mass., USA, July 9-11, 2007
+              http://projects.csail.mit.edu/saso2007/
+
+                 Sponsored by IEEE Computer Society,
+           Task Force on Autonomous and Autonomic Systems
+                        (approval pending)
+
+          in cooperation with ACM SIGOPS (approval pending)
+                        and ISCE Research
+
+
+The complexity of current computer systems has led the software
+engineering, distributed systems and management communities to
+look for inspiration in diverse fields (e.g., robotics,
+artificial intelligence or biology) to find new ways of
+designing and managing networks, systems and services. In this
+endeavor, self-organization and self-adaptation have emerged as
+two promising facets of a paradigm shift.
+
+Self-adaptive systems work in a top-down manner. They evaluate
+their own global behavior and change it when the evaluation
+indicates that they are not accomplishing what they were
+intended to do, or when better functionality or performance is
+possible. Self-organizing systems work bottom-up. They are
+composed of a large number of components that interact locally
+according to simple rules. The global behavior of the system
+emerges from these local interactions, and it is difficult to
+deduce properties of the global system by studying only the
+local properties of its parts.
+
+This  edition of SASO will focus on engineering, as opposed
+to speculative and conjectural visions. Contributions should
+present novel theoretical results, or practical experience
+with building systems, tools, frameworks, etc. Contributions
+contrasting different approaches for engineering a given
+family of systems, or demonstrating the applicability of a
+certain approach for different systems are particularly
+encouraged.
+
+Topics
+
+o Self-* properties:
+  - self-organization
+  - self-adaptiveness
+  - self-management
+  - self-monitoring
+  - self-tuning
+  - self-repair
+  - self-configuration
+  - etc.
+o Theories, frameworks and methods for self-* systems
+o Management and control of self-* systems
+o Robustness and dependability of self-* systems
+o Engineering and control of emergent properties in self-*
+  systems
+o Biologically and socially inspired self-* systems
+
+Systems & Technologies
+
+o P2P applications
+o Mobile robots
+o Sensor networks
+o Mobile ad hoc networks
+o Grids
+o Embedded systems, ubiquitous computing
+o Autonomic computing, autonomic communications
+o Computer networks, telecommunication networks
+o Multi-agent systems
+o E-business systems and services
+o Complex adaptive systems
+
+Research Communities
+
+o Distributed artificial intelligence
+o Networking
+o Software engineering
+o Distributed systems
+o Integrated management
+o Robotics
+o Knowledge-based systems
+o Machine learning
+o Control theory
+o Mathematical optimization
+
+Organization
+
+General Co-Chairs:
+Ozalp Babaoglu, University of Bologna, Italy
+Howard E. Shrobe, MIT, USA
+
+Program Committee Chairs:
+Giovanna Di Marzo Serugendo, Birkbeck, University of London, UK
+Jean-Philippe Martin-Flatin, NetExpert, Switzerland
+Mark Jelasity, University of Szeged, Hungary
+
+Finance Chair:
+Paul Robertson, MIT, USA
+
+Applications Track Chair:
+Franco Zambonelli, University of Modena and Reggio Emilia,
+Italy
+
+Industry Chair:
+Fabrice Saffre, BT, UK
+
+Tutorial Chair:
+David Hales, University of Bologna, Italy
+
+Panel Chair:
+Robert Laddaga, BBN Technologies, USA
+
+Publicity Chair:
+Hermann De Meer, University of Passau, Germany
+
+Sponsor Chair:
+Jean-Philippe Martin-Flatin, NetExpert, Switzerland
+
+Local Arrangements Chair:
+Thomas J. Green, MIT, USA
+
+Submission Instructions
+
+See conference website. All submissions should be 10 pages and
+formatted according to the IEEE Computer Society Press style
+guide.
+
+Important Dates
+
+Submission: January 31, 2007
+Notification: March 19, 2007
+Final paper: April 6, 2007
+
+*****************************************************************
+
+Best regards,
+Hermann de Meer
+
+____________________________________________________________
+
+About SIGOPS-ANNOUNCE
+
+The SIGOPS-ANNOUNCE mailing list is intended to provide a low-volume
+channel that provides operating systems researchers and practitioners
+with information about upcoming events or other important
+announcements.  In general, a message containing a group of such
+announcements will be sent about once per month with the subject line
+"SIGOPS-ANNOUNCE monthly posting".  On rare occasions, announcements
+of particular interest or urgency will be sent out with a different
+subject line, starting with "SIGOPS-ANNOUNCE supplemental posting"
+(for readers who wish to use mail filtering programs).  Finally, this
+mailing list is made available for use by publicity chairs of
+SIGOPS-sponsored conferences and the SIGOPS officers.
+
+To subscribe, send mail to LISTSERV@ACM.ORG with the following command
+(paste it!) in the body of the message:
+
+      SUBSCRIBE SIGOPS-ANNOUNCE
+
+To unsubscribe, send mail to LISTSERV@ACM.ORG with the following
+command in the body of the message:
+
+      UNSUBSCRIBE SIGOPS-ANNOUNCE
+
+To get more information about manipulating your subscription to this
+list, go to http://www.acm.org/infodir/services/listserv/doc.html
+
+To contact the owner of the list or to report a problem with the list,
+email SIGOPS-ANNOUNCE-request@ACM.ORG
+
+To request that an announcement be included in monthly mailings, go to
+http://sysnet.ucsd.edu/sigops/acm.html
+____________________________________________________________
+
+Geoff Voelker, SIGOPS Information Director

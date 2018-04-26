@@ -1,0 +1,88 @@
+==========================================================================
+                      * * * REMINDER * * *
+            Paper Registration Deadline: February  5, 2007
+            Paper Submission   Deadline: February 12, 2007
+==========================================================================
+
+                         CALL FOR PAPER
+
+    The 17th International Workshop on Network and Operating
+   Systems Support for Digital Audio and Video (NOSSDAV 2007)
+                    Urbana-Champaign, IL, USA
+                         June 4-5, 2007
+                     Sponsored by ACM SIGMM
+                  http://www.nossdav.org/2007
+
+
+For seventeen years,  NOSSDAV has fostered cutting-edge, state-of-the-art
+research in multimedia and newly emerging areas such as networked games and
+peer-to-peer streaming.  The workshop environment encourages lively
+discussion among participants and invites strong feedback for work in
+progress.  In 2007, NOSSDAV will be held at the University of Illinois at
+Urbana-Champaign, IL, USA.
+
+NOSSDAV invites submissions on all areas of multimedia computing and
+networking and strongly encourages work in progress in emerging areas.
+Papers grounded in high quality experimental research based on prototype
+and real systems are highly valued.  NOSSDAV will give extra consideration
+to papers that aim to comprehensively validate previous work in some topic
+within multimedia, propose new directions for research or call into
+question existing conventional wisdom. Topics of interest include, but are
+not limited to:
+
+- Peer-to-peer streaming
+- Networked games
+- Sensor networks and architectures
+- In-network stream processing
+- Wireless and mobile multimedia systems
+- 3D multimedia and tele-immersion
+- Streaming 3D graphics and virtual worlds
+- Application-level multicast
+- Multimedia security
+- Digital rights management
+- Real-time operating system support for multimedia
+- Multimedia middleware and frameworks
+- Multimedia grids
+- Programmable and GPU/SPU-enabled multimedia
+
+A broad view will be taken in deciding what topics are within scope.
+Please feel free to contact the workshop co-chairs if you are unsure and
+wish to check if a particular paper or topic is within the workshop scope.
+
+As always, student participation is strongly encouraged. To encourage a good
+mix of seasoned researchers as well as students, we will be offering
+discounted registration for non-student co-authors of a paper or other
+non-student participants associated with the author of a paper (participants
+from the same institution).
+
+Submissions (as well as the camera ready final versions of accepted
+papers) should be no longer than 6 pages.  We expect these submissions to be
+the kernel of what will eventually lead to full-length papers at
+high-quality conferences or journals.
+
+This year, a few of accepted NOSSDAV papers with highest quality are
+selected and their authors are invited to submit an extended version of
+their papers to a special issue of ACM/Springer Multimedia Systems Journal
+(MMSJ). MMSJ is a well-known International journal, published by the
+Springer Verlag, and sponsored by the ACM SIGMM organization. This journal
+publishes new research results in the areas of multimedia systems,
+multimedia networking, multimedia applications, multimedia security,
+multimedia education, multimedia coding, and multimedia retrieval systems.
+
+Program Co-chairs:
+
+   Reza Rejaie  (University of Oregon)
+   Klara Nahrstedt (UIUC)
+
+Important Dates:
+
+           Paper registration: February 5, 2007
+             Paper submission: February 12, 2007
+                 Notification: March 31, 2007
+                 Camera ready: April 19, 2007
+                     Workshop: June 4-5, 2007
+
+_______________________________________________
+tcos-announce mailing list
+tcos-announce@tcos.org
+http://tcos.org/mailman/listinfo/tcos-announce

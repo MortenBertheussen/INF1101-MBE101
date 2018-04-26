@@ -1,0 +1,61 @@
+Call for Participation
+
+ACM SIGOPS  EuroSys 2007 Conference
+
+Tuesday - Friday, March 20 - 23 2007
+Lisbon, Portugal
+
+http://www.eurosys.org/2007
+
+EARLY REGISTRATION DEADLINE:   Feb 28, 2007
+   (Some hotels have earlier cut-off dates!)
+
+Main conference:  March 21 -- 23
+Workshops:            March 20 and 23
+
+The conference organizers cordially invite you to attend EuroSys 2007.
+We aim to make EuroSys the premier systems conference in Europe
+and welcome participants from all over the world.
+
+There are five workshops co-located with EuroSys 2007:
+     1st Workshop on System-level Virtualization for High Performance
+         Computing (HPCVirt 2007)
+
+     1st Workshop on Middleware-Application Interaction (MAI'2007)
+
+     1st International Workshop on System Support for the Internet of  
+Things
+         (WoSSIoT'07)
+
+     2nd EuroSys Authoring Workshop
+
+     1st Workshop on Recent Advances on Intrusion-Tolerant Systems
+
+EuroSys is able to offer student scholarships to attend the
+conference. Details are on the web - the deadline for applications is
+February 4, 2007.
+
+CONFERENCE TECHNICAL PROGRAM
+
+    The single-track program consists of 29 papers representing the best
+    recent results in systems research. The advance program is now
+    available online at:
+      http://www.gsd.inesc-id.pt/conference/EuroSys2007/programme.html
+
+    There will also be a poster session, where researchers present work
+    in progress -- DEADLINE FEBRUARY 23, 2007
+
+CONFERENCE REGISTRATION NOW AVAILABLE ONLINE
+    http://www.gsd.inesc-id.pt/conference/EuroSys2007/registration/ 
+regform.php
+
+HOTEL INFORMATION NOW AVAILABLE ONLINE: RESERVE EARLY!
+    http://www.gsd.inesc-id.pt/conference/EuroSys2007/accomodation.html
+
+We look forward to seeing you in Lisbon from the 20th to the 23rd of  
+March!
+
+Best
+
+Wolfgang Schroeder-Preikschat
+for the EuroSys 2007 Organizing Committee

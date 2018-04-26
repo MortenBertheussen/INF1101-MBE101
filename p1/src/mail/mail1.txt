@@ -1,0 +1,106 @@
+        PRELIMINARY ANNOUNCEMENT and CALL FOR PAPERS
+
+     18th Tyrrhenian Workshop on Digital Communications
+     Ischia island, Naples, Italy  September 9-12, 2007
+
+                       Workshop theme
+                  WIRELESS COMMUNICATIONS
+
+* OVERVIEW
+The  Tyrrhenian workshop on  digital communications  is each
+year  devoted to  a specific  theme in  the area  of digital
+communications  and its  applications.  After  several years
+the theme  of wireless communications return.   The scope of
+the workshop  is a  friendly exchange of  ideas on  the main
+research  lines in the  field of  the workshop  theme.  This
+year we  have chosen  five chapters, and  to each of  them a
+session has been devoted:
+-4G wireless systems
+-Sensor and ad hoc networks
+-Security in wireless networks
+-QoS  and efficiency  in  multimedia heterogeneous  wireless
+ networks
+-Wireless system applications
+
+The  five  sessions  are  in some  sense  complementary  and
+interlaced each  other.  Suggested Technical  areas included
+in  the  sessions, but  are  not  limited, are:  modulation,
+coding,  effects of  system  impairments, channel  modeling,
+MIMO  and smart  antennas,  cross layer  and radio  resource
+management,   protocols,  routing   in   wireless  networks,
+cognitive radio, multimedia wireless communications, Quality
+of   Service  architectures,  security,   architectures  for
+security, etc.
+Some sessions are specifically devoted to and we are looking
+for  the  most  advanced  solutions  for  security  and  for
+applications   of  wireless   systems   in  many   different
+environment,  like multimedia  communications, infomobility,
+health care, emergency situations, etc.
+
+Interested  authors  are  invited  to submit  their  papers.
+Authors could also submit  papers yet open for discussion in
+the area of wireless  communications and its applications to
+the poster session.
+
+All submitted papers will  be carefully reviewed and, due to
+the  limited space available  in the  sessions some  of them
+could be proposed for the inclusion in the poster session.
+
+* PAPER SUBMISSION GUIDELINES
+Authors are invited to  submit extended summary of the final
+manuscript  of maximum  length  5 pages  including the  main
+results  (figures,  tables)  electronically in  PDF  format.
+Selection  of the  final manuscripts  will be  based  on the
+extended summary.
+
+Final manuscripts to be  considered as regular papers should
+be limited  to 15 double-spaced pages.  Final manuscripts to
+be considered for the poster session should be limited to 10
+double-spaced  pages. Any  paper submitted  to  the Workshop
+must  not  have been  published  in  or  submitted to  other
+technical   conferences/journals.     Proceedings   of   the
+Conference will be published as a book by Springer.
+
+The web page of the workshop will be ready soon at
+http://www.cnit.it/html/workshops/2007
+
+* IMPORTANT DATES
+Deadline for extended abstract:               March 31, 2007
+Notification of acceptance:                   April 30, 2007
+Final manuscript submission:                    June 1, 2007
+
+Workshop co-chairs
+Shingo Ohmori, NiCT, Japan
+Silvano Pupolin, University of Padova and CNIT, Italy
+
+Technical Program Committee
+Hiroyo Ogawa, NiCT, Japan
+Anand Prasad, NTT Docomo EuroLab, Germany
+Kato Shuzo, NiCT, Japan
+Michele Zorzi, University of Padova and CNIT, Italy
+
+Publicity
+Stefano Basagni, Northeastern University, Boston, MA, USA
+
+Publications
+Tomaso Erseghe,  University of Padova and CNIT, Italy
+
+
+
+
+
+--
+Stefano Basagni, Ph.D.      Assistant Professor of Computer Engineering
+Dept. of Electrical and Computer Engineering   312 Dana Research Center
+Northeastern University            360 Huntington Ave. Boston, MA 02115
+Tel. 617 373 3061, Fax 617 373 8970         E-mail: basagni@ece.neu.edu
+***               http://www.ece.neu.edu/faculty/basagni/           ***
+
+
+
+
+
+_______________________________________________
+tcos-announce mailing list
+tcos-announce@tcos.org
+http://tcos.org/mailman/listinfo/tcos-announce

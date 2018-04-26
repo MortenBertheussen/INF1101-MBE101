@@ -1,0 +1,121 @@
+================================================================
+
+
+
+                     CALL FOR PAPERS
+
+
+       ACM SIGPLAN/SIGBED 2007 Conference on Languages
+     Compilers, and Tools for Embedded Systems (LCTES07)
+             http://www.cs.purdue.edu/lctes07/
+
+         Part of FCRC (colocated with PLDI, ISCA etc.)
+                 http://www.acm.org/fcrc/
+
+           San Diego, California, June, 2007
+
+
+
+CONFERENCE SCOPES
+As the complexity of embedded system s increases, new
+research challenges are encountered for achieving the
+desired design goals, such as programmability, reliability
+and security, size, energy and power, timing constraints,
+and scalability. Furthermore, embedded systems are
+increasingly used in networked (wired, wireless, as well as
+mobile) environments which enable a variety of new applications.
+LCTES 2007 solicits papers presenting original work on
+programming languages, compilers and tools for embedded
+systems, as well as novel embedded architectures. Research
+papers (which propose innovative techniques) and experience
+papers (which report experimentation with and lessons learned
+from real-world systems and applications) are both welcome.
+(For more details of topics, please see the on-line Call for
+Papers.) In addition to its regular sessions, LCTES 2007
+will feature special events such as an industrial panel,
+keynotes, tutorials and demonstrations to bring out the
+latest and more interesting aspects of embedded systems.
+Examples include tools for multi-cores, emerging platforms
+such as smart phones multi-player game machines and real-time
+multi-media players.
+
+
+
+IMPORTANT DATES
+Submission deadline ( no extension ):
+February 11, noon UTC, 2007
+Author notification: April 2, 2007
+Camera ready deadline: April 21, 2007
+
+
+GENERAL CHAIR
+Santosh Pande
+Georgia Institute of Technology
+Atlanta, Georgia, USA
+santosh@cc.gatech.edu
+
+
+PROGRAM CHAIR
+Zhiyuan Li
+Purdue University
+West Lafayette, Indiana, USA
+li@cs.purdue.edu
+
+
+STEERING COMMITTEE
+Koen De Bosschere - Ghent University, Belgium
+Ron Cytron - Washington University, USA
+Srinivas Devadas - MIT, USA
+Rajiv Gupta - University of Arizona, USA
+Mary Jane Irwin - Penn State University, USA
+Annie Liu  SUNY at Stony Brook, USA
+Thomas Marlowe - Seton Hall University, USA
+Peter Marwedel - University of Dortmund, Germany
+Frank Mueller - North Carolina State University, USA
+Yunheung Paek - Seoul National University, Korea
+Santosh Pande - Georgia Tech, USA
+Per Stenstrom - Chalmers University of Technology, Sweden
+David Whalley - Florida State University, USA
+Reinhard Wilhelm - University of the Saarland, Germany
+
+
+PROGRAM COMMITTEE
+Jack Davidson (University of Virginia, USA)
+Nikil Dutt (University of California at Irvine, USA)
+Christopher D. Gill (Washington University, USA)
+Hinori Kasahara (Waseda University, Japan)
+Vladimir Kotlyar (SandBridge Technologies)
+Neelam Gupta (University of Arizona, USA)
+Mary Hall (ISI, University of Southern California, USA)
+Mahmut Kandemir (Pensylvania State University, USA)
+Jaejin Lee (Seoul National University, Korea)
+Jenq-Kuen Lee (National Tsing Hua University, Taiwan)
+Annie Liu (SUNY at Stony Brook, USA)
+Thomas Marlowe (Seton Hall University, USA)
+Frank Mueller (North Carolina State University, USA)
+Kathryn O'Brien (IBM Research)
+Yunheung Paek (Seoul National University, Korea)
+John Regehr (University of Utah, USA)
+Bjorn De Sutter (IMEC, Belgium)
+David Whalley (Florida State University, USA)
+Youfeng Wu (Intel)
+Bingyu Zang (Fudan University, China)
+Xiaotong Zhuang (IBM Research)
+Benjamin Zorn (Microsoft Research)
+
+
+
+PUBLICITY CHAIRS
+Europe: Bjorn De Sutter (IMEC, Belgium)
+America: Xiaotong Zhuang (IBM Research)
+Asia-Pacific: Jaejin Lee (Seoul National University, Korea)
+
+
+
+STUDENT POSTER CHAIR
+Mahmut Kandemir (Pensylvania State University)
+
+
+
+WEB/PUBLICATION CHAIR
+Xiangyu Zhang (Purdue University)
