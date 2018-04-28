@@ -5,8 +5,8 @@
 struct index
 {
     map_t *map;
-    char *current;
     list_iter_t *query_iterator;
+    char *current;
     double doc_count;
 };
 
@@ -159,6 +159,31 @@ int compare_query(void *a, void *b)
  */
 list_t *index_query(index_t *index, list_t *query, char **errmsg)
 {
+    // Check list size?
+    index->current = list_popfirst(query);
+    set_t *set = parse_query(index, errmsg);
+    list_t *retval = NULL;
+    if (NULL != set)
+    {
+        set_iter_t *set_iter = set_createiter(set);
+        retval = list_create(compare_query);
+
+        while (1 == set_hasnext(set_iter))
+        {
+            query_result_t *query_result = malloc(sizeof(query_result_t));
+            data_t *data = set_next(set_iter);
+            query_result->path = data->path;
+            query_result->score = (data->term_in_document / data->terms_in_document) * (log(index->doc_count / ((double)set_size(set))));
+            list_addfirst(retval, query_result);
+        }
+        set_destroyiter(set_iter);
+        list_sort(retval);
+    }
+    return retval;
+}
+
+list_t *index_query(index_t *index, list_t *query, char **errmsg)
+{
     index->query_iterator = list_createiter(query);
 
     if (1 == list_hasnext(index->query_iterator))
@@ -271,6 +296,14 @@ set_t *parse_orterm(index_t *index, char **errmsg)
 /*
     term ::= "("query")"| <word>
 */
+
+// set_t *parse_term(index_t *index, char **errmsg)
+// {
+//     set_t *retval = NULL;
+
+//     if(index->)
+// }
+
 set_t *parse_term(index_t *index, char **errmsg)
 {
     set_t *retval = NULL;
