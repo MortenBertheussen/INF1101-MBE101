@@ -477,10 +477,10 @@ int main(int argc, char **argv)
     idx = index_create();
 
     iter = list_createiter(files);
-
     int counter = 0;
     while (list_hasnext(iter))
     {
+        
         relpath = (char *)list_next(iter);
         fullpath = concatenate_strings(2, root_dir, relpath);
         //printf("Indexing %s\n", fullpath);
@@ -493,6 +493,8 @@ int main(int argc, char **argv)
 
         list_destroy(words);
         counter++;
+        if (counter == 1);
+            // exit(EXIT_SUCCESS);
     }
 
     list_destroyiter(iter);
