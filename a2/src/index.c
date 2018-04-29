@@ -166,20 +166,20 @@ void index_addpath(index_t *index, char *path, list_t *words)
  */
 list_t *index_query(index_t *index, list_t *query, char **errmsg)
 {
+    // Parse 'query' and store result in 'set'
     set_t *set = parse_query(index, query, errmsg);
     list_t *retval = NULL;
 
+    // Iterate through 'set' and structure the results in 'query_result_t' container which is added to the 'retval' list after calculating the tfidf score.
+    // query_result->score already contains term frequency from index_addpath.
     if (NULL != set)
     {
         set_iter_t *set_iter = set_createiter(set);
         retval = list_create(compare_query);
         while (1 == set_hasnext(set_iter))
         {
-            printf("'%p'\tAddress of 'retval' is \n", retval);
             query_result_t *query_result = set_next(set_iter);
-            printf("'%p'\tAddress of 'query_result' is \n", query_result);
             query_result->score *= (log(index->doc_count / ((double)set_size(set))));
-            printf("'%lf'\tScore of 'query_result' is \n", query_result->score);
             list_addfirst(retval, query_result);
         }
         set_destroyiter(set_iter);
@@ -188,11 +188,9 @@ list_t *index_query(index_t *index, list_t *query, char **errmsg)
     else
     {
         char *ptr = malloc(sizeof(char) * 100);
-
-        sprintf(ptr, "Internal error: query yielded zero results.");
+        sprintf(ptr, "The query yielded zero results.");
         *errmsg = ptr;
     }
-    printf("\n\n\n");
     return retval;
 }
 
