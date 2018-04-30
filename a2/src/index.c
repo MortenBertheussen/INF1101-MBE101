@@ -6,48 +6,15 @@ struct index
 {
     map_t *map;
     char *current;
+    char *old_path;
     double doc_count;
 };
-
-typedef struct data
-{
-    char *path;
-    double term_in_document;
-    double terms_in_document;
-} data_t;
 
 set_t *parse_query(index_t *index, list_t *query, char **errmsg);
 set_t *parse_andterm(index_t *index, list_t *query, char **errmsg);
 set_t *parse_orterm(index_t *index, list_t *query, char **errmsg);
 set_t *parse_term(index_t *index, list_t *query, char **errmsg);
 set_t *parse_andnot(index_t *index, list_t *query, char **errmsg);
-
-data_t *data_create()
-{
-    data_t *d = calloc(1, sizeof(data_t));
-    if (d == NULL)
-    {
-        fatal_error(ERROR_MSG);
-    }
-    return d;
-}
-
-void data_destroy(data_t *d)
-{
-    if (NULL != d)
-    {
-        if (NULL != d->path)
-        {
-            free(d->path);
-        }
-        free(d);
-    }
-}
-
-int compare_data(void *a, void *b)
-{
-    return compare_strings(((data_t *)a)->path, ((data_t *)b)->path);
-}
 
 int compare_query_path(void *a, void *b)
 {
@@ -102,6 +69,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
 {
     // Save the size of the 'words' list before popping content of it.
     double document_word_count = list_size(words);
+    char *current_word;
 #pragma region word_frequency
     map_t *word_frequency = map_create(compare_strings, hash_string);
     list_iter_t *list_iter = list_createiter(words);
@@ -123,10 +91,10 @@ void index_addpath(index_t *index, char *path, list_t *words)
     }
 #pragma endregion word_frequency
 
-    while (0 < list_size(words))
+    while (0 != list_size(words))
     {
-        // Popping content of the word list such that the function comply with given instructions.
-        char *current_word = list_popfirst(words);
+        // Popping content of the 'word' list such that the function comply with given instructions of deallocating content of it.
+        current_word = list_popfirst(words);
 
         // 'Current_word' found in map.
         if (1 == map_haskey(index->map, current_word))
@@ -135,7 +103,8 @@ void index_addpath(index_t *index, char *path, list_t *words)
             set_t *set = map_get(index->map, current_word);
 
             // 'set' does not contain 'path'.
-            if (1 != set_contains(set, &(data_t){.path = path}))
+            //TODO: Use oldpath?
+            if (1 != set_contains(set, &(query_result_t){.path = path}))
             {
                 // Add 'path' to 'set' and calculate term frequency.
                 query_result_t *query = malloc(sizeof(query_result_t));
@@ -154,7 +123,9 @@ void index_addpath(index_t *index, char *path, list_t *words)
         }
     }
     free(path);
+    free(index->old_path);
     index->doc_count++;
+    index->old_path = strdup(path);
 }
 
 /*
