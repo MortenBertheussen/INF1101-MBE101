@@ -23,7 +23,6 @@ set_t *parse_query(index_t *index, char **errmsg);
 set_t *parse_andterm(index_t *index, char **errmsg);
 set_t *parse_orterm(index_t *index, char **errmsg);
 set_t *parse_term(index_t *index, char **errmsg);
-set_t *parse_andnot(index_t *index, char **errmsg);
 
 data_t *data_create()
 {
@@ -91,6 +90,27 @@ void index_addpath(index_t *index, char *path, list_t *words)
 {
     // Save the size of the 'words' list before popping content of it.
     int document_word_count = list_size(words);
+
+#pragma region word_frequency
+    map_t *word_frequency = map_create(compare_strings, hash_string);
+    list_iter_t *list_iter = list_createiter(words);
+    while (list_hasnext(list_iter))
+    {
+        char *current_word = list_next(list_iter);
+        if (1 == map_haskey(word_frequency, current_word))
+        {
+            double *wf = map_get(word_frequency, current_word);
+            (*wf)++;
+            map_put(word_frequency, current_word, wf);
+        }
+        else
+        {
+            double *wf = malloc(sizeof(int));
+            *wf = 1;
+            map_put(word_frequency, current_word, wf);
+        }
+    }
+#pragma endregion word_frequency
 
     while (0 < list_size(words))
     {
@@ -187,9 +207,9 @@ list_t *index_query(index_t *index, list_t *query, char **errmsg)
             list_addfirst(retval, query_result);
         }
         set_destroyiter(set_iter);
+        list_sort(retval);
     }
     list_destroyiter(index->query_iterator);
-    list_sort(retval);
     return retval;
 }
 
@@ -199,19 +219,23 @@ list_t *index_query(index_t *index, list_t *query, char **errmsg)
 set_t *parse_query(index_t *index, char **errmsg)
 {
 
-    set_t *retval = NULL, *term1, *term2;
+    set_t *retval = NULL, *term1 = NULL, *term2 = NULL;
     term1 = parse_andterm(index, errmsg);
 
-    if (compare_strings(index->current, "ANDNOT") == 0)
+    if (compare_strings(index->current, "ANDNOT") == 0 && term1)
     {
         if (list_hasnext(index->query_iterator))
         {
             index->current = list_next(index->query_iterator);
             term2 = parse_query(index, errmsg);
-            if (term1 != NULL && term2 != NULL)
+            if (term2 != NULL)
+            {
                 retval = set_difference(term1, term2);
+            }
             else
-                *errmsg = "parse_andterm, term1 || term2 not found";
+            {
+                *errmsg = "somthing went wrong...!";
+            }
         }
     }
     else
@@ -226,18 +250,20 @@ set_t *parse_query(index_t *index, char **errmsg)
 */
 set_t *parse_andterm(index_t *index, char **errmsg)
 {
-    set_t *retval = NULL, *term1, *term2;
+    set_t *retval = NULL, *term1 = NULL, *term2 = NULL;
     term1 = parse_orterm(index, errmsg);
-    if (compare_strings(index->current, "AND") == 0)
+    if (compare_strings(index->current, "AND") == 0 && term1)
     {
         if (list_hasnext(index->query_iterator))
         {
             index->current = list_next(index->query_iterator);
             term2 = parse_andterm(index, errmsg);
-            if (term1 != NULL && term2 != NULL)
+            if (term2 != NULL)
                 retval = set_intersection(term1, term2);
             else
-                *errmsg = "parse_andterm, term1 || term2 not found";
+            {
+                *errmsg = "somthing went wrong...!";
+            }
         }
     }
     else
@@ -252,10 +278,10 @@ set_t *parse_andterm(index_t *index, char **errmsg)
 */
 set_t *parse_orterm(index_t *index, char **errmsg)
 {
-    set_t *retval = NULL, *term1, *term2;
+    set_t *retval = NULL, *term1 = NULL, *term2 = NULL;
     term1 = parse_term(index, errmsg);
 
-    if (compare_strings(index->current, "OR") == 0)
+    if (compare_strings(index->current, "OR") == 0 && term1)
     {
         if (list_hasnext(index->query_iterator))
         {
@@ -264,7 +290,9 @@ set_t *parse_orterm(index_t *index, char **errmsg)
             if (term1 != NULL && term2 != NULL)
                 retval = set_union(term1, term2);
             else
-                *errmsg = "parse_orterm, term1 || term2 not found";
+            {
+                *errmsg = "somthing went wrong...!";
+            }
         }
     }
     else
@@ -289,10 +317,10 @@ set_t *parse_term(index_t *index, char **errmsg)
         retval = parse_query(index, errmsg);
 
         if (compare_strings(index->current, ")") != 0)
-            sprintf(*errmsg, "Internal error: "
-                             "expected ')' found '%s'"
-                             "from function '%s' in file '%s' line number '%d'",
-                    index->current, __func__, __FILE__, __LINE__);
+        {
+            *errmsg = "somthing went wrong...!";
+        }
+
         else if (list_hasnext(index->query_iterator))
             index->current = list_next(index->query_iterator);
     }
@@ -306,10 +334,8 @@ set_t *parse_term(index_t *index, char **errmsg)
         }
         else
         {
-            sprintf(*errmsg, "Internal error: "
-                             "key not found in map: '%s'  "
-                             "from function '%s' in file '%s' line number '%d'",
-                    index->current, __func__, __FILE__, __LINE__);
+
+            *errmsg = "somthing went wrong...!";
         }
     }
     return retval;
