@@ -6,7 +6,6 @@ struct index
 {
     map_t *map;
     char *current;
-    char *old_path;
     double doc_count;
 };
 
@@ -70,6 +69,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
     // Save the size of the 'words' list before popping content of it.
     double document_word_count = list_size(words);
     char *current_word;
+
 #pragma region word_frequency
     map_t *word_frequency = map_create(compare_strings, hash_string);
     list_iter_t *list_iter = list_createiter(words);
@@ -123,9 +123,7 @@ void index_addpath(index_t *index, char *path, list_t *words)
         }
     }
     free(path);
-    free(index->old_path);
     index->doc_count++;
-    index->old_path = strdup(path);
 }
 
 /*
@@ -177,7 +175,7 @@ set_t *parse_query(index_t *index, list_t *query, char **errmsg)
 
     term1 = parse_andterm(index, query, errmsg);
 
-    if (0 == compare_strings(index->current, "ANDNOT"))
+    if (0 == compare_strings(index->current, "ANDNOT") && list_size(query))
     {
         if (0 != list_size(query))
             index->current = list_popfirst(query);
@@ -203,7 +201,7 @@ set_t *parse_andterm(index_t *index, list_t *query, char **errmsg)
     set_t *retval = NULL, *term1 = NULL, *term2 = NULL;
     term1 = parse_orterm(index, query, errmsg);
 
-    if (0 == compare_strings(index->current, "AND"))
+    if (0 == compare_strings(index->current, "AND") && list_size(query))
     {
         if (0 != list_size(query))
             index->current = list_popfirst(query);
@@ -229,7 +227,7 @@ set_t *parse_orterm(index_t *index, list_t *query, char **errmsg)
     set_t *retval = NULL, *term1 = NULL, *term2 = NULL;
     term1 = parse_term(index, query, errmsg);
 
-    if (0 == compare_strings(index->current, "OR"))
+    if (0 == compare_strings(index->current, "OR") && list_size(query))
     {
         if (0 != list_size(query))
             index->current = list_popfirst(query);
@@ -250,7 +248,6 @@ set_t *parse_orterm(index_t *index, list_t *query, char **errmsg)
 /*
     term ::= "("query")"| <word>
 */
-
 set_t *parse_term(index_t *index, list_t *query, char **errmsg)
 {
     set_t *retval = NULL;
@@ -258,6 +255,9 @@ set_t *parse_term(index_t *index, list_t *query, char **errmsg)
     if (0 == compare_strings(index->current, "("))
     {
         retval = parse_query(index, query, errmsg);
+        // Pop ')' from 'query' into 'index->current'
+        if (0 != list_size(query))
+            index->current = list_popfirst(query);
         if (0 != compare_strings(index->current, ")"))
         {
             char *ptr = malloc(sizeof(char) * 100);
@@ -286,8 +286,5 @@ set_t *parse_term(index_t *index, list_t *query, char **errmsg)
             *errmsg = ptr;
         }
     }
-    // Pop ')' from 'query' into 'index->current'
-    if (0 != list_size(query))
-        index->current = list_popfirst(query);
     return retval;
 }
